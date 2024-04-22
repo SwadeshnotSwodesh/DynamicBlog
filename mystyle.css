@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ 
+body{
+    background: lightgray;
+    
+}
+.primary-background{
+    background: #2196f3!important;
+    
+}
+.c{
+    clear: both;
+}
+.left{
+    width: 60%;
+    float: left;
+}
+.right{
+    width: 35%;
+    float: right;
+}
+.right img{
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+}
+.left h1{
+    font-family: cursive;
+}
+.secondContainer{
+    text-align: center;
+    color: #000;
+    font-family: arial;
+}
+footer{
+    background: #424242;
+    padding: 7px;
+    color:#fff;
+    text-align: center;
+    font-size: 10px;
+}
+ 
+ 
