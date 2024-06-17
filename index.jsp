@@ -21,6 +21,8 @@
                 clip-path: polygon(0 0, 100% 0, 100% 95%, 61% 100%, 28% 95%, 0 100%);
             }
 
+/*this is for the previous version of the text animation*/
+<!--
             #typingContainer {
                 font-size: 24px;
                 font-family: 'Arial', sans-serif;
@@ -43,6 +45,7 @@
                 animation: blinkCursor 7s step-end infinite;
                 
             }
+-->
 
 
 
@@ -66,6 +69,38 @@
         
           
 
+
+
+<!--this is for the final text animation-->
+
+
+
+#typingContainer {
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #000;
+            position: relative;
+            display: inline-block;
+        }
+
+        #typingContainer::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #000;
+            animation: blinkCursor 0.7s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+         
         
         
          
@@ -240,6 +275,11 @@
         <script src="js/myjs.js" type="text/javascript"></script>
 
 
+
+
+<!--
+
+//this is for the previous version of the text animation
         <script>
             const messages = [
                 "An ardent Full-Stack Software Engineer",
@@ -274,6 +314,64 @@
 
             window.onload = startTypingAnimation;
         </script>
+
+-->
+
+
+
+
+//this is for the final text animation
+
+<script>
+        const messages = [
+            "An ardent Full-Stack Software Engineer",
+            "A Tech Enthusiast exploring technology",
+            // Add more messages as needed
+        ];
+
+        let messageIndex = 0;
+        let charIndex = 0;
+        const typingContainer = document.getElementById('typingContainer');
+        let typingInterval;
+        let deleting = false;
+
+        function type() {
+            const currentMessage = messages[messageIndex];
+
+            if (deleting) {
+                typingContainer.textContent = currentMessage.slice(0, charIndex);
+                if (charIndex > 0) {
+                    charIndex--;
+                } else {
+                    deleting = false;
+                    messageIndex = (messageIndex + 1) % messages.length;
+                    setTimeout(type, 500); // Delay before starting to type the next message
+                    return;
+                }
+            } else {
+                typingContainer.textContent = currentMessage.slice(0, charIndex);
+                if (charIndex < currentMessage.length) {
+                    charIndex++;
+                } else {
+                    deleting = true;
+                    setTimeout(type, 2000); // Delay before starting to delete
+                    return;
+                }
+            }
+            typingInterval = setTimeout(type, 100);
+        }
+
+        function startTypingAnimation() {
+            if (typingInterval) {
+                clearTimeout(typingInterval);
+            }
+
+            typingInterval = setTimeout(type, 100);
+        }
+
+        window.onload = startTypingAnimation;
+    </script>
+
 
 
 
