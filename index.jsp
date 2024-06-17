@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.tech.blog.helper.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
@@ -21,31 +21,7 @@
                 clip-path: polygon(0 0, 100% 0, 100% 95%, 61% 100%, 28% 95%, 0 100%);
             }
 
-/*this is for the previous version of the text animation*/
-<!--
-            #typingContainer {
-                font-size: 24px;
-                font-family: 'Arial', sans-serif;
-                overflow: hidden;
-                white-space: nowrap;
-                border-right: 2px solid #000;
-                position: relative;
-                display: inline-block;
-            }
-
-            #typingContainer::after {
-                /* content: '|';  Blinking cursor content */
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 100%;
-                width: 2px;
-                background-color: #000;
-
-                animation: blinkCursor 7s step-end infinite;
-                
-            }
--->
+              
 
 
 
@@ -69,13 +45,9 @@
         
           
 
-
-
-<!--this is for the final text animation-->
-
-
-
-#typingContainer {
+        
+        
+          #typingContainer {
             font-size: 24px;
             font-family: 'Arial', sans-serif;
             overflow: hidden;
@@ -99,9 +71,6 @@
             from { opacity: 1; }
             to { opacity: 0; }
         }
-        
-         
-        
         
          
 
@@ -133,6 +102,7 @@
                             <h3>Welcome to my Tech Blog!</h3>
 
                             <br>
+                            
                             <!--<h6>&nbsp;All we believe in are ST, DRY, and KISS.</h6>-->
                             <div class="text-animation">
                                 
@@ -273,56 +243,12 @@
 
 
         <script src="js/myjs.js" type="text/javascript"></script>
-
-
-
-
-<!--
-
-//this is for the previous version of the text animation
-        <script>
-            const messages = [
-                "An ardent Full-Stack Software Engineer",
-                "A Tech Enthusiast exploring technology",
-                        // Add more messages as needed
-            ];
-
-            let messageIndex = 0;
-            let charIndex = 0;
-            const typingContainer = document.getElementById('typingContainer');
-            let typingInterval;
-
-            function type() {
-                const currentMessage = messages[messageIndex];
-                typingContainer.textContent = currentMessage.slice(0, charIndex);
-
-                if (charIndex < currentMessage.length) {
-                    charIndex++;
-                } else {
-                    charIndex = 0;
-                    messageIndex = (messageIndex + 1) % messages.length;
-                }
-            }
-
-            function startTypingAnimation() {
-                if (typingInterval) {
-                    clearInterval(typingInterval);
-                }
-
-                typingInterval = setInterval(type, 100);
-            }
-
-            window.onload = startTypingAnimation;
-        </script>
-
--->
-
-
-
-
-//this is for the final text animation
-
-<script>
+        
+        
+       
+        
+        
+         <script>
         const messages = [
             "An ardent Full-Stack Software Engineer",
             "A Tech Enthusiast exploring technology",
@@ -373,7 +299,7 @@
     </script>
 
 
-
+          
 
     </body>
 </html>
